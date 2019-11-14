@@ -1,5 +1,5 @@
 ---
-title: "Poročilo pri predmetu Analiza podatkov s programom R"
+title: "Poročilo pri predmetu Ana Liza podatkov s programom R"
 author: "Slovenija moja dežela"
 output:
   html_document: default
