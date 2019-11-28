@@ -9,12 +9,13 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2019/20
 
 V projektni nalogi bom analiziral neudeleževanje v kulturnih in športnih aktivnostih in razloge za te v letu 2015. Zanima me, kako se spreminja kulturno in športno udeleževanje  pri posameznikih,glede na prihodni kvantil, vrsto gospodinjstva, in stopnjo urbanizacije.
 
-vir podatkov v obliki .cvs in.html
+Vir podatkov v obliki .cvs in.html
 https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do
+
  Tabela 1.
- stolpci:  Udeležba,kvantil,vrsta gospodinjstva,stopnja urbanizacije,država
+  - stolpci:  Udeležba,kvantil,vrsta gospodinjstva,stopnja urbanizacije,država
  Tabela 2.
-stolpci razlog za neudeležbo:  kvantil,vrsta gospodinjstva,stopnja urbanizacije,država 
+ - stolpci razlog za neudeležbo:  kvantil,vrsta gospodinjstva,stopnja urbanizacije,država 
 
 ## Program
 
