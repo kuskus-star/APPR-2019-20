@@ -1,4 +1,4 @@
 # Podatki
 
-Tukaj bomo zbirali vse podatke (datoteke v obliki CSV, XML, ...), ki jih bo naš
-program uvozil.
+Vir podatkov v obliki .cvs:
+https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do
