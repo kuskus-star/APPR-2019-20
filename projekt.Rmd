@@ -46,40 +46,29 @@ Vir podatkov:https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do
 
 Podatki so v 2 tabelah:
 
-Tabela 1: Namen uporabe interneta po starostnih razredih in spolu - 'starostni_razredi_in_spol':
- - 'namen uporabe interneta' - (neurejen faktor)
- - 'leto' - (število)
- - 'število posameznikov - skupaj' - (število)
- - '16-24' - (število)
- - '25-34' - (število)
- - '35-44' - (število)
- - '45-54' - (število)
- - '55-64' - (število)
- - '65-74' - (število)
- - 'moški - skupaj' - (število)
- - 'moški 16-24' - (število)
- - 'moški 35-54' - (število)
- - 'moški 55-74' - (število)
- - 'ženske - skupaj' - (število)
- - 'ženske 16-24' - (število)
- - 'ženske 35-54' - (število)
- - 'ženske 55-74' - (število)
+Tabela 1:  - 'neudelezevanje':
+ - 'TIME' - (število)
+ - 'GEO' -(neurejen faktor)
+ - 'FREQUENC'- (neurejen faktor)
+ - 'DEG_URB' -(neurejen faktor)
+ - 'QUANITLE' -(neurejen faktor)
+ - 'UNIT' -(neurejen faktor)
+ - 'VALUE' -(število)
+ - 'Flags and foot's notes' -(neurejen faktor)
 
 Tabela 2: Namen uporabe interneta po izobrazbi in spolu - 'izobrazba_in_spol':
- - 'namen uporabe interneta' - (neurejen faktor)
- - 'leto' - (število)
- - 'število posameznikov - skupaj' - (število)
- - 'največ oš izobrazba' - (število)
- - 'srednja izobrazba' - (število)
- - 'vsaj visokošolska izobrazba' - (število)
- - 'moški - skupaj' - (število)
- - 'moški največ oš izobrazba' - (število)
- - 'moški srednja izobrazba' - (število)
- - 'moški vsaj visokošolska izobrazba' - (število)
- - 'ženske - skupaj' - (število)
- - 'ženske največ oš izobrazba' - (število)
- - 'ženske srednja izobrazba' - (število)
- - 'ženske vsaj visokošolska izobrazba' - (število)
+ 
+ - 'ACL00' -(neurejen faktor)
+ - 'GEO' -(neurejen faktor)
+ - 'TIME' - (število)
+ - 'QUANITLE' -(neurejen faktor)
+ - 'DEG_URB' -(neurejen faktor)
+ - 'FREQUENC'- (neurejen faktor)
+ -'TIME' -(številka) 
+ - UNIT' -(neurejen faktor)
+ - VALUE' -(število)
+ - Flags and foot's notes' -(neurejen faktor)
+
 
 
 

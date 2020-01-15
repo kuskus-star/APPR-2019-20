@@ -3,13 +3,34 @@
 
 
 #1. tabela vsebuje procente neudeleževanja v kulturnih prireditvah
-neudelezevanje <- read_csv("podatki/podatki.csv", col_names=TRUE, na="" ,locale = locale(encoding="Windows-1250"))
+neudelezevanje <- read_csv("podatki/podatki.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
+TIME <- neudelezevanje$TIME
+neudelezevanje$TIME <- NULL
+GEO <- neudelezevanje$GEO
+neudelezevanje$GEO <- NULL
+UNIT <- neudelezevanje$UNIT
+neudelezevanje$UNIT <- NULL
+names(neudelezevanje)[6]<-"FnF"
+FnF <- neudelezevanje$FnF
+neudelezevanje$FnF <- NULL 
+
 
 
 
 
 #2. tabela vsebuje razloge za neudeleževanje v klturnih prireditvah
-razlogi <- read_csv("podatki/podatki2.csv", col_names=TRUE, na="" ,locale = locale(encoding="Windows-1250"))
+razlogi <- read_csv("podatki/podatki2.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
+TIME <- razlogi$TIME
+razlogi$TIME <- NULL
+GEO <- razlogi$GEO
+razlogi$GEO <- NULL
+UNIT <- razlogi$UNIT
+razlogi$UNIT <- NULL
+names(razlogi)[7]<-"FnF"
+FnF <- razlogi$FnF
+razlogi$FnF <- NULL 
+
+
 
 
 
