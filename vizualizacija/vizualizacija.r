@@ -1,4 +1,4 @@
-# 3. faza: Vizualizacija podatkov
+# 3.faza: Vizualizacija podatkov
 
 # Uvozimo zemljevid.
 zemljevid <- uvozi.zemljevid("http://baza.fmf.uni-lj.si/OB.zip", "OB",
