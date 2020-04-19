@@ -29,8 +29,15 @@ razlogi$UNIT <- NULL
 names(razlogi)[7]<-"FnF"
 FnF <- razlogi$FnF
 razlogi$FnF <- NULL 
-
-
+razlogi$Value1 <- razlogi$Value
+razlogi$Value<-NULL
+razlogi$Value2<- neudelezevanje$Value
+razlogi$ValueTru <- razlogi$Value1 * razlogi$Value2/100
+razlogi$QUANTILE[razlogi$QUANTILE == "First quintile"] <- 1
+razlogi$QUANTILE[razlogi$QUANTILE == "Second quintile"] <- 2
+razlogi$QUANTILE[razlogi$QUANTILE == "Third quintile"] <- 3
+razlogi$QUANTILE[razlogi$QUANTILE == "Fourth quintile"] <- 4
+razlogi$QUANTILE[razlogi$QUANTILE == "Fifth quintile"] <- 5
 
 
 
