@@ -1,0 +1,57 @@
+"DATASET: Participation in any cultural or sport activities in the last 12 months by income quintile, household type and degree of urbanisation [ilc_scp02]"
+
+"LAST UPDATE: 24.02.20 14:13:11"
+
+"EXTRACTION DATE: 28.04.20 17:40:43"
+
+"SOURCE OF DATA: Eurostat"
+
+"TIME"
+"2015"
+
+"GEO"
+"Slovenia"
+
+"FREQUENC"
+"Not in the last 12 months"
+
+"DEG_URB"
+"Total"
+"Cities"
+"Towns and suburbs"
+"Rural areas"
+
+"HHTYP"
+"Total"
+"Households without dependent children"
+"Households with dependent children"
+
+"QUANTILE"
+"Total"
+"First quintile"
+"Second quintile"
+"Third quintile"
+"Fourth quintile"
+"Fifth quintile"
+
+"UNIT"
+"Percentage"
+
+"No footnotes available"
+
+"Available flags:"
+"b","break in time series"
+"c","confidential"
+"d","definition differs, see metadata"
+"e","estimated"
+"f","forecast"
+"n","not significant"
+"p","provisional"
+"r","revised"
+"s","Eurostat estimate"
+"u","low reliability"
+"z","not applicable"
+
+"Special value:"
+":","not available"
+
