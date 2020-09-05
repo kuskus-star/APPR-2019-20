@@ -1,0 +1,66 @@
+"DATASET: Reasons of non-participation in cultural or sport activities in the last 12 months by  income quintile, household type, degree of urbanisation and activity type [ilc_scp06]"
+
+"LAST UPDATE: 24.02.20 14:13:11"
+
+"EXTRACTION DATE: 04.05.20 17:06:59"
+
+"SOURCE OF DATA: Eurostat"
+
+"REASON"
+"Financial reasons"
+"No interest"
+"None in the neighbourhood"
+"Other"
+
+"GEO"
+"Slovenia"
+
+"ACL00"
+"Cinema"
+"Live performances (theatre, concerts, ballet)"
+"Cultural sites (historical monuments, museums, art galleries or archaeological sites)"
+"Sports events"
+
+"QUANTILE"
+"Total"
+"First quintile"
+"Second quintile"
+"Third quintile"
+"Fourth quintile"
+"Fifth quintile"
+
+"DEG_URB"
+"Total"
+"Cities"
+"Towns and suburbs"
+"Rural areas"
+
+"HHTYP"
+"Total"
+"Households with dependent children"
+"Households without dependent children"
+
+"TIME"
+"2015"
+
+"UNIT"
+"Percentage"
+
+"No footnotes available"
+
+"Available flags:"
+"b","break in time series"
+"c","confidential"
+"d","definition differs, see metadata"
+"e","estimated"
+"f","forecast"
+"n","not significant"
+"p","provisional"
+"r","revised"
+"s","Eurostat estimate"
+"u","low reliability"
+"z","not applicable"
+
+"Special value:"
+":","not available"
+

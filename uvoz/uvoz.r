@@ -3,32 +3,57 @@
 
 
 #1. tabela vsebuje procente neudeleževanja v kulturnih prireditvah
-neudelezevanje <- read_csv("podatki/podatki.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
-TIME <- neudelezevanje$TIME
-neudelezevanje$TIME <- NULL
-GEO <- neudelezevanje$GEO
-neudelezevanje$GEO <- NULL
-UNIT <- neudelezevanje$UNIT
-neudelezevanje$UNIT <- NULL
-names(neudelezevanje)[6]<-"FnF"
-FnF <- neudelezevanje$FnF
-neudelezevanje$FnF <- NULL 
-
-
-
-
+Neudelezevanje<- read_csv("podatki/ilc_scp04_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
+names(Neudelezevanje)[10]<-"FnF"
+Neudelezevanje$FnF <- NULL
+Neudelezevanje$GEO <- NULL
+Neudelezevanje$UNIT <- NULL
+Neudelezevanje <-filter(Neudelezevanje,Neudelezevanje$FREQUENC =="Not in the last 12 months")
+Neudelezevanje$FREQUENC<-NULL
+Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "First quintile"] <- 1
+Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Second quintile"] <- 2
+Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Third quintile"] <- 3
+Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Fourth quintile"] <- 4
+Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Fifth quintile"] <- 5
+Neudelezevanje$TIME[Neudelezevanje$TIME == 2006] <- "2006"
+Neudelezevanje$TIME[Neudelezevanje$TIME == 2015] <- "2015"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Live performances"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Cultural activities"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Cultural sites"
+Neudelezevanje_6 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2006")
+Neudelezevanje_6$TIME <- NULL
+Neudelezevanje_15 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2015")
+Neudelezevanje_15$TIME <- NULL
 
 #2. tabela vsebuje razloge za neudeleževanje v klturnih prireditvah
-razlogi <- read_csv("podatki/podatki2.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
-TIME <- razlogi$TIME
-razlogi$TIME <- NULL
-GEO <- razlogi$GEO
-razlogi$GEO <- NULL
-UNIT <- razlogi$UNIT
-razlogi$UNIT <- NULL
-names(razlogi)[7]<-"FnF"
-FnF <- razlogi$FnF
-razlogi$FnF <- NULL 
+Razlogi <- read_csv("podatki/podatki3.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
+names(Razlogi)[10]<-"FnF"
+Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Live performances"
+Razlogi$ACL00[Razlogi$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Cultural sites"
+Razlogi$ACL00[Razlogi$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Cultural activities"
+Razlogi$FnF <- NULL 
+Razlogi$TIME <- NULL
+Razlogi$GEO <- NULL
+Razlogi$UNIT <- NULL
+Razlogi$Value1 <- Razlogi$Value
+Razlogi$Value<-NULL
+col_order <- c("ACL00","DEG_URB", "HHTYP", "QUANTILE","REASON","Value1")
+Razlogi <- Razlogi[, col_order]
+
+Slika <- merge(Neudelezevanje_15,Razlogi,by=c("ACL00","DEG_URB", "HHTYP", "QUANTILE")) 
+Slika$Value.x<-NULL
+Slika$Value.y<-NULL
+
+Slika$QUANTILE[Slika$QUANTILE == "First quintile"] <- 1
+Slika$QUANTILE[Slika$QUANTILE == "Second quintile"] <- 2
+Slika$QUANTILE[Slika$QUANTILE == "Third quintile"] <- 3
+Slika$QUANTILE[Slika$QUANTILE == "Fourth quintile"] <- 4
+Slika$QUANTILE[Slika$QUANTILE == "Fifth quintile"] <- 5
+names(Slika)[5]<-"NVALUE"
+names(Slika)[7]<-"RVALUE"
+
+Slika$TVALUE = Slika$NVALUE*Slika$RVALUE/100
+
 
 
 
