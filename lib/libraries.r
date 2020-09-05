@@ -1,4 +1,7 @@
 library(knitr)
+library(markdown)
+library(ggvis)
+library(dplyr)
 library(rvest)
 library(gsubfn)
 library(tidyr)

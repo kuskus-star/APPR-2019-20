@@ -3,54 +3,45 @@
 
 
 #1. tabela vsebuje procente neudeleževanja v kulturnih prireditvah
-Neudelezevanje <- read_csv("podatki/ilc_scp02_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
-TIME <- neudelezevanje$TIME
-Neudelezevanje$TIME <- NULL
-GEO <- Nneudelezevanje$GEO
-Neudelezevanje$GEO <- NULL
-UNIT <- Neudelezevanje$UNIT
-Neudelezevanje$UNIT <- NULL
-Neudelezevanje$FnF <- NULL 
-Neudelezevanje$FREQUENC<-NULL
-names(Neudelezevanje)[5]<-"FnF"
-FnF <- Neudelezevanje$FnF
+Neudelezevanje<- read_csv("podatki/ilc_scp04_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
+names(Neudelezevanje)[10]<-"FnF"
 Neudelezevanje$FnF <- NULL
-
-
-
-
+Neudelezevanje$GEO <- NULL
+Neudelezevanje$UNIT <- NULL
+Neudelezevanje <-filter(Neudelezevanje,Neudelezevanje$FREQUENC =="Not in the last 12 months")
+Neudelezevanje$FREQUENC<-NULL
+Neudelezevanje_6 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2006")
+Neudelezevanje_6$TIME <- NULL
+Neudelezevanje_15 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2015")
+Neudelezevanje_15$TIME <- NULL
 
 #2. tabela vsebuje razloge za neudeleževanje v klturnih prireditvah
 Razlogi <- read_csv("podatki/podatki3.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
 names(Razlogi)[10]<-"FnF"
-FnF <- Razlogi$FnF
 Razlogi$FnF <- NULL 
-TIME <- Razlogi$TIME
 Razlogi$TIME <- NULL
-GEO <- Razlogi$GEO
 Razlogi$GEO <- NULL
-UNIT <- Razlogi$UNIT
 Razlogi$UNIT <- NULL
 Razlogi$Value1 <- Razlogi$Value
 Razlogi$Value<-NULL
-col_order <- c("DEG_URB", "HHTYP", "QUANTILE",
-               "ACL00", "REASON","Value1")
+col_order <- c("ACL00","DEG_URB", "HHTYP", "QUANTILE","REASON","Value1")
 Razlogi <- Razlogi[, col_order]
-Razlogi
-Slika<-merge.data.frame(Neudelezevanje,Razlogi)
-Slika$ValueTru <- Slika$Value * Slika$Value1/100
+
+Slika <- merge(Neudelezevanje_15,Razlogi,by=c("ACL00","DEG_URB", "HHTYP", "QUANTILE")) 
+Slika$Value.x<-NULL
+Slika$Value.y<-NULL
 
 Slika$QUANTILE[Slika$QUANTILE == "First quintile"] <- 1
 Slika$QUANTILE[Slika$QUANTILE == "Second quintile"] <- 2
 Slika$QUANTILE[Slika$QUANTILE == "Third quintile"] <- 3
 Slika$QUANTILE[Slika$QUANTILE == "Fourth quintile"] <- 4
 Slika$QUANTILE[Slika$QUANTILE == "Fifth quintile"] <- 5
-names(Slika)[4]<-"NVALUE"
+names(Slika)[5]<-"NVALUE"
 names(Slika)[7]<-"RVALUE"
-names(Slika)[8]<-"TVALUE"
 
-col_order <- c("Cities","Towns and suburbs","Rural Areas","Total")
-                 
+Slika$TVALUE = Slika$NVALUE*Slika$RVALUE/100
+
+
 
 
 

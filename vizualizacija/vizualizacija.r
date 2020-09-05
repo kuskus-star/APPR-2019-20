@@ -140,4 +140,76 @@ raz_dens<-ggplot(tmp_data_dens,aes(x=HHTYP,y = DEG_URB,fill=TVALUE)) + geom_tile
 pairs(Slika)
 
 
+##################################################################################################
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Households with dependent children",DEG_URB== "Total",Slika$ACL00 == "Sports events",QUANTILE == "Total") 
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie = raz_circ + coord_polar("y", start=0)
+pie
+
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Households without dependent children",DEG_URB== "Total",Slika$ACL00 == "Sports events",QUANTILE == "Total") 
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie = raz_circ + coord_polar("y", start=0)
+pie
+
+
+##===========================================================================================================
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Total",Slika$ACL00 == "Cinema",QUANTILE == "Total")
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie1 = raz_circ + coord_polar("y", start=0)
+pie1
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Cities",Slika$ACL00 == "Cinema",QUANTILE == "Total") 
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie3 = raz_circ + coord_polar("y", start=0)
+pie3
+
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Towns and suburbs",Slika$ACL00 == "Cinema",QUANTILE == "Total")
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie0 = raz_circ + coord_polar("y", start=0)
+pie0
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Rural areas",Slika$ACL00 == "Cinema",QUANTILE == "Total") 
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie2 = raz_circ + coord_polar("y", start=0)
+pie2
+
+
+#########################################)
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Total",Slika$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)",QUANTILE == "Total")
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie1 = raz_circ + coord_polar("y", start=0)
+pie1
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Rural areas",Slika$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)",QUANTILE == "Total") 
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie2 = raz_circ + coord_polar("y", start=0)
+pie2
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Towns and suburbs",Slika$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)",QUANTILE == "Total")
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie0 = raz_circ + coord_polar("y", start=0)
+pie0
+
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Cities",Slika$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)",QUANTILE == "Total")
+raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+pie3 = raz_circ + coord_polar("y", start=0)
+pie3
+#########################################)
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Towns and suburbs",Slika$ACL00 == "Sports events",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie0 = raz_circ + coord_polar("y", start=0)pie0
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Total",Slika$ACL00 == "Sports events",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie1 = raz_circ + coord_polar("y", start=0)pie1
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Rural areas",Slika$ACL00 == "Sports events",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie2 = raz_circ + coord_polar("y", start=0)pie2
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Cities",Slika$ACL00 == "Sports events",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie3 = raz_circ + coord_polar("y", start=0)pie3
+#########################################)
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Towns and suburbs",Slika$ACL00 == "Live performances (theatre, concerts, ballet)",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie0 = raz_circ + coord_polar("y", start=0)pie0
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Total",Slika$ACL00 == "Live performances (theatre, concerts, ballet)",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie1 = raz_circ + coord_polar("y", start=0)pie1
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Rural areas",Slika$ACL00 == "Live performances (theatre, concerts, ballet)",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie2 = raz_circ + coord_polar("y", start=0)pie2
+tmp_data_circ<- filter(Slika,Slika$HHTYP == "Total",DEG_URB== "Cities",Slika$ACL00 == "Live performances (theatre, concerts, ballet)",QUANTILE == "Total") raz_circ <-ggplot(tmp_data_circ,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()pie3 = raz_circ + coord_polar("y", start=0)pie3
+#########################################)
+
+
+
+
+
 
