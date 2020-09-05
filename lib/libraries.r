@@ -10,7 +10,10 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(gtable)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ff672199c36333ed29be0ccefa1e44ccdfc4957
 # Uvozimo funkcije za pobiranje in uvoz zemljevida.
 source("lib/uvozi.zemljevid.r", encoding="UTF-8")
 

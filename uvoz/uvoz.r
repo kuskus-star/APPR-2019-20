@@ -53,11 +53,14 @@ names(Slika)[5]<-"NVALUE"
 names(Slika)[7]<-"RVALUE"
 
 Slika$TVALUE = Slika$NVALUE*Slika$RVALUE/100
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 2ff672199c36333ed29be0ccefa1e44ccdfc4957
 
 
 
