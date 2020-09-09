@@ -10,10 +10,22 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(gtable)
-<<<<<<< HEAD
+library(tmap)
+library(StandardizeText)
+library(sf)
+library(rdal)
+library(maptools)
+library(rgeos)
+library(tmap)
+library(rnaturalearth)
+library(plotly)
+library(useful)
+library(gridExtra)
+library(grid)
+library(scales)
+library(stats)
+library(ggfortify)
 
-=======
->>>>>>> 2ff672199c36333ed29be0ccefa1e44ccdfc4957
 # Uvozimo funkcije za pobiranje in uvoz zemljevida.
 source("lib/uvozi.zemljevid.r", encoding="UTF-8")
 
