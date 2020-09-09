@@ -2,7 +2,7 @@
 
 "LAST UPDATE: 24.02.20 14:13:11"
 
-"EXTRACTION DATE: 04.05.20 17:06:59"
+"EXTRACTION DATE: 06.09.20 16:38:04"
 
 "SOURCE OF DATA: Eurostat"
 
@@ -13,7 +13,38 @@
 "Other"
 
 "GEO"
+"Belgium"
+"Bulgaria"
+"Czechia"
+"Denmark"
+"Germany (until 1990 former territory of the FRG)"
+"Estonia"
+"Ireland"
+"Greece"
+"Spain"
+"France"
+"Croatia"
+"Italy"
+"Cyprus"
+"Latvia"
+"Lithuania"
+"Luxembourg"
+"Hungary"
+"Malta"
+"Netherlands"
+"Austria"
+"Poland"
+"Portugal"
+"Romania"
 "Slovenia"
+"Slovakia"
+"Finland"
+"Sweden"
+"United Kingdom"
+"Iceland"
+"Norway"
+"Switzerland"
+"Serbia"
 
 "ACL00"
 "Cinema"
@@ -31,14 +62,9 @@
 
 "DEG_URB"
 "Total"
-"Cities"
-"Towns and suburbs"
-"Rural areas"
 
 "HHTYP"
 "Total"
-"Households with dependent children"
-"Households without dependent children"
 
 "TIME"
 "2015"
