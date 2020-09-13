@@ -2,16 +2,16 @@ library(shiny)
 
 shinyUI(fluidPage(
   
-  titlePanel("Slovenske občine"),
+  titlePanel("Kulturno Neudeleževanje"),
   
   tabsetPanel(
-      tabPanel("Velikost družine",
-               DT::dataTableOutput("druzine")),
-      
-      tabPanel("Število naselij",
-               sidebarPanel(
-                  uiOutput("pokrajine")
-                ),
-               mainPanel(plotOutput("naselja")))
-    )
+    tabPanel("po premoženju",
+             DT::dataTableOutput("druzine")),
+    
+    tabPanel("Število naselij",
+             sidebarPanel(
+               uiOutput("QUANTILE")
+             ),
+             mainPanel(plotOutput("naselja")))
+  )
 ))
