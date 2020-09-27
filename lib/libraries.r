@@ -24,7 +24,8 @@ library(gridExtra)
 library(grid)
 library(scales)
 library(stats)
-
+library(ggfortify)
+library(tmaptools)
 
 # Uvozimo funkcije za pobiranje in uvoz zemljevida.
 source("lib/uvozi.zemljevid.r", encoding="UTF-8")
