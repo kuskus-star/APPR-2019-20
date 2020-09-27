@@ -26,14 +26,15 @@ Neudelezevanje_Sport <-filter(Neudelezevanje_15,Neudelezevanje_15$ACL00=="Sports
 
 
 # zemljevid
+evropa <- subset(svet,svet$CONTINENT == "Europe")
+evropa <- subset(evropa,evropa$NAME != "Russian Federation")
 
-
-tmap_options (bg.color = "#63def3")
+tmap_options (bg.color = "#FFFFFF")
 tmp_data<-filter(Neudelezevanje_15,Neudelezevanje_15$QUANTILE=="Total",Neudelezevanje_15$ACL00=="Sports events",bbox = bbox_new)
 tmp_data$ACL00= NULL
 tmp_data$QUANTILE=NULL
 tmp_data$cluster<- km$cluster
-zemljevid_sport <- tm_shape(merge(svet, tmp_data, by.x = "NAME", by.y = "GEO",)) + 
+zemljevid_sport <- tm_shape(merge(evropa, tmp_data, by.x = "NAME", by.y = "GEO",)) + 
   tm_fill(col = "cluster", contrast = 1, palette = "YlOrRd", title = "Neudelezeanje",colorNA = "Grey", textNA = "Manjkajoči podatki") +
   tm_layout(legend.outside = TRUE)
 zemljevid_sport 

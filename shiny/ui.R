@@ -5,12 +5,16 @@ shinyUI(fluidPage(
   titlePanel("Kulturno Neudeleževanje"),
   
   tabsetPanel(
-    tabPanel("po premoženju",
-             DT::dataTableOutput("druzine")),
-    
-    tabPanel("Število naselij",
+    tabPanel("Neudeleževanje po razlogih",
              sidebarPanel(
-               uiOutput("QUANTILE")
+               uiOutput("RACL00")
+             ),
+             mainPanel(plotOutput("razlogi"))),
+    
+    tabPanel("Neudeleževanje po Premoženju",
+             sidebarPanel(
+               uiOutput("QUANTILE"),
+               uiOutput("ACL00")
              ),
              mainPanel(plotOutput("naselja")))
   )

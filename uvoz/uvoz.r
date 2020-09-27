@@ -4,8 +4,7 @@
 
 #1. tabela vsebuje procente neudeleževanja v kulturnih prireditvah
 Neudelezevanje<- read_csv("podatki/ilc_scp04_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
-Neudelezevanje$GEO<-standardize.countrynames(Neudelezevanje$GEO)
-a
+Neudelezevanje$GEO<-standardize.countrynames(Neudelezevanje$GEO,suggest = "auto", print.changes = TRUE)
 names(Neudelezevanje)[10]<-"FnF"
 Neudelezevanje <- na.omit(Neudelezevanje)
 Neudelezevanje$FnF <- NULL
@@ -30,7 +29,7 @@ Neudelezevanje_15$TIME <- NULL
 
 #2. tabela vsebuje razloge za neudeleževanje v klturnih prireditvah
 Razlogi <- read_csv("podatki/ilc_scp06_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
-Razlogi$GEO <- standardize.countrynames(Razlogi$GEO)
+Razlogi$GEO <- standardize.countrynames(Razlogi$GEO,suggest = "auto", print.changes = TRUE)
 a
 names(Razlogi)[10]<-"FnF"
 Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Live performances"
@@ -68,11 +67,8 @@ svet <- uvozi.zemljevid(
   "ne_50m_admin_0_countries", encoding="UTF-8")
 svet$NAME <- standardize.countrynames(svet$NAME, suggest = "auto", print.changes = TRUE)
 
-
-
-
-
-
+Neudelezevanjee_15_0<-filter(Neudelezevanje_Sport,Neudelezevanje_Sport$QUANTILE=="Total")
+Neudelezevanjee_15_0$Value<-"N/A"
 
 
 
