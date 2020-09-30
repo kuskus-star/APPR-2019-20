@@ -3,23 +3,23 @@ library(shiny)
 shinyServer(function(input, output) {
   output$RACL00 <- renderUI(
     selectInput("RACL00", label="Izberi Dejavnost",
-                choices=c("Cinema","Live performances","Sports events","Cultural sites"
+                choices=c("Kino","Muzeji in galerije","Športni dogodki","Nastopi v živo"
                 )))
   
   output$razlogi <-  renderPlot({
     main <- "Pogostost števila naselij"
-    razlogi_graf<- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == input$RACL00,QUANTILE != "Total")
+    razlogi_graf<- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == input$RACL00,QUANTILE != "Celotna populacija")
     rac<-ggplot(razlogi_graf,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
     rac
   })
   output$QUANTILE <- renderUI(
     selectInput("QUANTILE", label="Izberi Kvintil",
-                choices=c(1,2,3,4,5,"Total"
+                choices=c("1.","2.","3.","4.","5.","Celotna populacija"
                 )))
   
   output$ACL00 <- renderUI(
     selectInput("ACL00", label="Izberi Dejavnost",
-                choices=c("Cinema","Live performances","Sports events","Cultural sites"
+                choices=c("Kino","Muzeji in galerije","Športni dogodki","Nastopi v živo"
                 )))
   
   output$naselja <- renderPlot({
