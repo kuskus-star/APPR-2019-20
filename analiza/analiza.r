@@ -59,6 +59,13 @@ for (i in 1:6){
   betweenss_totss[i]<-k[[i]]$betweenss/k[[i]]$totss
 }
 plot(1:6,betweenss_totss,type="b",xlab="K")
-
+#imamo torej 2-3 skupine
 Neudelezevanje_15$cluster_2  <- kmeans(Neudelezevanje_15$Value,2)$cluster
+# prelomnica je 58
+Neudelezevanje_15$cluster_2  <- NULL
+
 Neudelezevanje_15$cluster_3  <- kmeans(Neudelezevanje_15$Value,3)$cluster
+#prelomnici sta 46 in 
+Neudelezevanje_15$cluster_3 <-NULL
+
+
