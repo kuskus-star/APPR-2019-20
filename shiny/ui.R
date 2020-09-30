@@ -5,13 +5,13 @@ shinyUI(fluidPage(
   titlePanel("Kulturno Neudeleževanje"),
   
   tabsetPanel(
-    tabPanel("Neudeleževanje po razlogih",
+    tabPanel("Razlogi za Neudeleževanje v Sloveniji",
              sidebarPanel(
                uiOutput("RACL00")
              ),
              mainPanel(plotOutput("razlogi"))),
     
-    tabPanel("Neudeleževanje po Premoženju",
+    tabPanel("Neudeleževanje po Svetu",
              sidebarPanel(
                uiOutput("QUANTILE"),
                uiOutput("ACL00")
