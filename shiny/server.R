@@ -8,13 +8,29 @@ shinyServer(function(input, output) {
   
   output$razlogi <-  renderPlot({
     main <- "Pogostost števila naselij"
-    razlogi_graf<- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == input$RACL00,QUANTILE != "Celotna populacija")
+    razlogi_graf<- filter(Slika,Slika$GEO == input$drzava,Slika$ACL00 == input$RACL00,QUANTILE != "Celotna populacija")
+    for (i in c("Financial reasons", "No interest","None in the neighbourhood","Other")){
+      if (!(i %in% input$razlog)) {
+        razlogi_graf<-filter(razlogi_graf,razlogi_graf$REASON != i)
+        print(input$razlog)
+      }
+    } 
     rac<-ggplot(razlogi_graf,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
     rac
   })
   output$QUANTILE <- renderUI(
     selectInput("QUANTILE", label="Izberi Kvintil",
                 choices=c("1.","2.","3.","4.","5.","Celotna populacija"
+                )))
+  output$drzava <- renderUI(
+    selectInput("drzava", label="Izberi Državo",
+                choices=Slika$GEO
+                ))
+  
+  output$razlog <- renderUI(
+    checkboxGroupInput("razlog", label="Prikaži razloge",selected = c("Financial reasons", "No interest","None in the neighbourhood","Other"),
+                       choiceNames=c("Financial reasons", "No interest","None in the neighbourhood","Other"
+                       ), choiceValues=c("Financial reasons", "No interest","None in the neighbourhood","Other"
                 )))
   
   output$ACL00 <- renderUI(
