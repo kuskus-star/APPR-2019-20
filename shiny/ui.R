@@ -7,7 +7,9 @@ shinyUI(fluidPage(
   tabsetPanel(
     tabPanel("Razlogi za Neudeleževanje v Sloveniji",
              sidebarPanel(
-               uiOutput("RACL00")
+               uiOutput("RACL00"),
+               uiOutput("razlog"),
+               uiOutput("drzava")
              ),
              mainPanel(plotOutput("razlogi"))),
     
