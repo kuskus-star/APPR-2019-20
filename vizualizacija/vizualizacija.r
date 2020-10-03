@@ -4,19 +4,12 @@ tmap_mode("plot")
 #################################################################################################################################
 tmp_data1 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Kino")
 raz1slo<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()+ 
-  labs(title = "Razlogi Neobiskovanja Kina", x = "Kvintil", y = "Delež Neudeleženih")
-
-
-tmp_data_den<- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Kino",Slika$REASON == "Financial reasons")
-den1slo <-ggplot(tmp_data_den,aes(x=QUANTILE,y = TVALUE)) + geom_col()
-  
-  
-Nezanim1slo
+  labs(title = "Razlogi Neobiskovanja Kina", x = "Kvintil", y = "Delez Neudelezenih")
 
 tmp_data2 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Muzeji in galerije")
 raz2slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data3 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Športni dogodki")
+tmp_data3 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "�portni dogodki")
 raz3slo<-ggplot(tmp_data3,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
 tmp_data4 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Nastopi v živo")
@@ -33,7 +26,7 @@ tmp_ned1 <- filter(Neudelezevanje,Neudelezevanje$GEO == "Slovenia",Neudelezevanj
 ned1<-ggplot(tmp_ned1,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned1
 
-tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "Športni dogodki")
+tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "sportni dogodki")
 ned2<-ggplot(tmp_ned2,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned2
 
@@ -74,7 +67,7 @@ raz1<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 tmp_data2 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Muzeji in galerije")
 raz2<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data3 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Športni dogodki")
+tmp_data3 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "sportni dogodki")
 raz3<-ggplot(tmp_data3,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
 tmp_data4 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Nastopi v živo")
