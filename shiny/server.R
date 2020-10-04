@@ -12,7 +12,7 @@ shinyServer(function(input, output) {
     for (i in c("Financial reasons", "No interest","None in the neighbourhood","Other")){
       if (!(i %in% input$razlog)) {
         razlogi_graf<-filter(razlogi_graf,razlogi_graf$REASON != i)
-        print(input$razlog)
+        axis(2,at=seq(0,80,10))
       }
     } 
     rac<-ggplot(razlogi_graf,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
@@ -38,6 +38,16 @@ shinyServer(function(input, output) {
                 choices=c("Kino","Muzeji in galerije","Športni dogodki","Nastopi v živo"
                 )))
   
+  output$RAZZ <- renderUI(
+    selectInput("RAZZ", label="Prikaži razloge",selected = c("Financial reasons", "No interest","None in the neighbourhood","Other"),
+                       choices=c("Financial reasons", "No interest","None in the neighbourhood","Other"
+                       )))
+  
+  output$dejavnost <- renderUI(
+    selectInput("dejavnost", label="Izberi Dejavnost",
+                choices=c("Kino","Muzeji in galerije","Športni dogodki","Nastopi v živo"
+                )))
+  
   output$naselja <- renderPlot({
     main <- "Pogostost števila naselij"
       temp <- Neudelezevanje_15 %>% filter(Neudelezevanje_15$QUANTILE == input$QUANTILE,Neudelezevanje_15$ACL00 == input$ACL00)
@@ -47,4 +57,13 @@ shinyServer(function(input, output) {
       tm_layout(legend.outside = TRUE)
     zemljevid_sport
   })
+  
+  output$skatle <- renderPlot({
+    main <- "Škatlice"
+    tmp_data <- filter(Slika,Slika$REASON==input$RAZZ,Slika$ACL00==input$dejavnost,Slika$QUANTILE != "Celotna populacija")
+    zemljevid_brki<-boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col="orange")
+    print(tmp_data)
+    zemljevid_brki
+  })
+  
 })

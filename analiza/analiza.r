@@ -68,4 +68,11 @@ Neudelezevanje_15$cluster_3  <- kmeans(Neudelezevanje_15$Value,3)$cluster
 #prelomnici sta 46 in 
 Neudelezevanje_15$cluster_3 <-NULL
 
+tmp_data <- filter(Slika,Slika$REASON=="No interest",Slika$ACL00=="Športni dogodki",Slika$QUANTILE != "Celotna populacija")
+boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col = "orange")
 
+tmp_data <- filter(Slika,Slika$REASON=="Financial reasons",Slika$ACL00=="Športni dogodki",Slika$QUANTILE != "Celotna populacija")
+boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col = "blue")
+
+tmp_data <- filter(Slika,Slika$REASON=="None in the neighbourhood",Slika$ACL00=="Športni dogodki",Slika$QUANTILE != "Celotna populacija")
+boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col = "pink")

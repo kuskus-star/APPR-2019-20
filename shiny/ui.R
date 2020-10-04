@@ -18,6 +18,12 @@ shinyUI(fluidPage(
                uiOutput("QUANTILE"),
                uiOutput("ACL00")
              ),
-             mainPanel(plotOutput("naselja")))
+             mainPanel(plotOutput("naselja"))),
+    tabPanel("Škatle z brki",
+             sidebarPanel(
+               uiOutput("dejavnost"),
+               uiOutput("RAZZ")
+             ),
+             mainPanel(plotOutput("skatle")))
   )
 ))
