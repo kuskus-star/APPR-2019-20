@@ -61,9 +61,8 @@ shinyServer(function(input, output) {
   output$skatle <- renderPlot({
     main <- "Škatlice"
     tmp_data <- filter(Slika,Slika$REASON==input$RAZZ,Slika$ACL00==input$dejavnost,Slika$QUANTILE != "Celotna populacija")
-    zemljevid_brki<-boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col="orange")
-    print(tmp_data)
+    zemljevid_brki<-ggplot(tmp_data,aes(x = QUANTILE,y=TVALUE))+
+    geom_boxplot()
     zemljevid_brki
   })
-  
 })
