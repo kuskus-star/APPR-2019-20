@@ -2,7 +2,7 @@
 
 
 
-#1. tabela vsebuje procente neudeleževanja v kulturnih prireditvah
+#1. tabela vsebuje procente neudelezevanja v kulturnih prireditvah
 Neudelezevanje<- read_csv("podatki/ilc_scp04_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
 Neudelezevanje$GEO<-standardize.countrynames(Neudelezevanje$GEO,suggest = "auto", print.changes = TRUE)
 names(Neudelezevanje)[10]<-"FnF"
@@ -20,27 +20,27 @@ Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Fifth quintile"] <- "5."
 Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Total"] <- "Celotna populacija"
 Neudelezevanje$TIME[Neudelezevanje$TIME == 2006] <- "2006"
 Neudelezevanje$TIME[Neudelezevanje$TIME == 2015] <- "2015"
-Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v zivo"
 Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Kulturne Aktivnosti"
 Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Muzeji in galerije"
-Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v zivo"
 Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cinema"] <- "Kino"
-Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Sports events"] <- "Športni dogodki"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Sports events"] <- "Sportni dogodki"
 Neudelezevanje_6 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2006")
 Neudelezevanje_6$TIME <- NULL
 Neudelezevanje_15 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2015")
 Neudelezevanje_15$TIME <- NULL
 
-#2. tabela vsebuje razloge za neudeleževanje v klturnih prireditvah
+#2. tabela vsebuje razloge za neudelezevanje v klturnih prireditvah
 Razlogi <- read_csv("podatki/ilc_scp06_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
 Razlogi$GEO <- standardize.countrynames(Razlogi$GEO,suggest = "auto", print.changes = TRUE)
 a
 names(Razlogi)[10]<-"FnF"
-Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
+Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v zivo"
 Razlogi$ACL00[Razlogi$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Kulturne Aktivnosti"
 Razlogi$ACL00[Razlogi$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Muzeji in galerije"
 Razlogi$ACL00[Razlogi$ACL00 == "Cinema"] <- "Kino"
-Razlogi$ACL00[Razlogi$ACL00 == "Sports events"] <- "Športni dogodki"
+Razlogi$ACL00[Razlogi$ACL00 == "Sports events"] <- "Sportni dogodki"
 Razlogi$FnF <- NULL 
 Razlogi$TIME <- NULL
 Razlogi$HHTYP <- NULL
@@ -99,7 +99,7 @@ Neudelezevanjee_15_0$Value<-"N/A"
 #                         "ustanovitev", "pokrajina", "regija", "odcepitev")
 #   tabela$obcina <- gsub("Slovenskih", "Slov.", tabela$obcina)
 #   tabela$obcina[tabela$obcina == "Kanal ob Soči"] <- "Kanal"
-#   tabela$obcina[tabela$obcina == "Loški potok"] <- "Loški Potok"
+#   tabela$obcina[tabela$obcina == "Loski potok"] <- "Loski Potok"
 #   for (col in c("povrsina", "prebivalci", "gostota", "naselja", "ustanovitev")) {
 #     if (is.character(tabela[[col]])) {
 #       tabela[[col]] <- parse_number(tabela[[col]], na="-", locale=sl)
@@ -117,20 +117,20 @@ Neudelezevanjee_15_0$Value<-"N/A"
 #                     locale=locale(encoding="CP1250"))
 #   data$obcina <- data$obcina %>% strapplyc("^([^/]*)") %>% unlist() %>%
 #     strapplyc("([^ ]+)") %>% sapply(paste, collapse=" ") %>% unlist()
-#   data$obcina[data$obcina == "Sveti Jurij"] <- "Sveti Jurij ob Ščavnici"
+#   data$obcina[data$obcina == "Sveti Jurij"] <- "Sveti Jurij ob Sčavnici"
 #   data <- data %>% gather(`1`:`4`, key="velikost.druzine", value="stevilo.druzin")
 #   data$velikost.druzine <- parse_number(data$velikost.druzine)
 #   data$obcina <- parse_factor(data$obcina, levels=obcine)
 #   return(data)
 # }
 # 
-# # Zapišimo podatke v razpredelnico obcine
+# # Zapisimo podatke v razpredelnico obcine
 # obcine <- uvozi.obcine()
 # 
-# # Zapišimo podatke v razpredelnico druzine.
+# # Zapisimo podatke v razpredelnico druzine.
 # druzine <- uvozi.druzine(levels(obcine$obcina))
 # 
-# # Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
+# # Če bi imeli več funkcij za uvoz in nekaterih npr. se ne bi
 # # potrebovali v 3. fazi, bi bilo smiselno funkcije dati v svojo
 # # datoteko, tukaj pa bi klicali tiste, ki jih potrebujemo v
 # # 2. fazi. Seveda bi morali ustrezno datoteko uvoziti v prihodnjih

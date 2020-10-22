@@ -22,8 +22,8 @@ km$cluster
 km=kmeans(tmp_data$Value,2)
 km$cluster
 # zemljevid za 3 grupe
-Neudelezevanje_Sport <-filter(Neudelezevanje_15,Neudelezevanje_15$ACL00=="Športni dogodki") 
-tmp_data<-filter(Neudelezevanje_15,Neudelezevanje_15$QUANTILE=="Total",Neudelezevanje_15$ACL00=="Športni dogodki")
+Neudelezevanje_Sport <-filter(Neudelezevanje_15,Neudelezevanje_15$ACL00=="Sportni dogodki") 
+tmp_data<-filter(Neudelezevanje_15,Neudelezevanje_15$QUANTILE=="Total",Neudelezevanje_15$ACL00=="Sportni dogodki")
 tmp_data$ACL00= NULL
 tmp_data$QUANTILE=NULL
 tmp_data$cluster<- km$cluster
@@ -71,8 +71,8 @@ Neudelezevanje_15$cluster_3 <-NULL
 tmp_data <- filter(Slika,Slika$REASON=="None in the neighbourhood",Slika$ACL00=="Kino",Slika$QUANTILE != "Celotna populacija")
 boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col = "orange")
 
-tmp_data <- filter(Slika,Slika$REASON=="Financial reasons",Slika$ACL00=="Športni dogodki",Slika$QUANTILE != "Celotna populacija")
+tmp_data <- filter(Slika,Slika$REASON=="Financial reasons",Slika$ACL00=="Sportni dogodki",Slika$QUANTILE != "Celotna populacija")
 boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col = "blue")
 
-tmp_data <- filter(Slika,Slika$REASON=="None in the neighbourhood",Slika$ACL00=="Športni dogodki",Slika$QUANTILE != "Celotna populacija")
+tmp_data <- filter(Slika,Slika$REASON=="None in the neighbourhood",Slika$ACL00=="Sportni dogodki",Slika$QUANTILE != "Celotna populacija")
 boxplot(tmp_data$TVALUE ~ tmp_data$QUANTILE,dataset = tmp_data,col = "pink")

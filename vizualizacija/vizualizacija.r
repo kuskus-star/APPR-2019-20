@@ -9,15 +9,15 @@ raz1slo<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col(
 tmp_data2 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Muzeji in galerije")
 raz2slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data3 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Športni dogodki")
+tmp_data3 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Sportni dogodki")
 raz3slo<-ggplot(tmp_data3,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data4 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Nastopi v živo")
+tmp_data4 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Nastopi v zivo")
 raz4slo<-ggplot(tmp_data4,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
 raz1slo
-#pogledamo v kakšnih deležih se ljudje po kvantilih ne udelezujejo raznih kulturnih dogodkov opazimo ,
-#da je razlika pri sportu najmanša opazimo tudi da pri sportu ce bi izkljucili financne razlge bi biu peti kvintil najbolj aktiven
+#pogledamo v kaksnih delezih se ljudje po kvantilih ne udelezujejo raznih kulturnih dogodkov opazimo ,
+#da je razlika pri sportu najmansa opazimo tudi da pri sportu ce bi izkljucili financne razlge bi biu peti kvintil najbolj aktiven
 
 
 ######################################################################################################################
@@ -26,7 +26,7 @@ tmp_ned1 <- filter(Neudelezevanje,Neudelezevanje$GEO == "Slovenia",Neudelezevanj
 ned1<-ggplot(tmp_ned1,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned1
 
-tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "Športni dogodki")
+tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "Sportni dogodki")
 ned2<-ggplot(tmp_ned2,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned2
 
@@ -34,7 +34,7 @@ tmp_ned3 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$
 ned3<-ggplot(tmp_ned3,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned3
 
-tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "Nastopi v živo")
+tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "Nastopi v zivo")
 ned4<-ggplot(tmp_ned4,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned4
 
@@ -44,7 +44,7 @@ tmp_ned1 <- filter(Neudelezevanje,Neudelezevanje$GEO == "Serbia",Neudelezevanje$
 ned1<-ggplot(tmp_ned1,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned1
 
-tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Športni dogodki")
+tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Sportni dogodki")
 ned2<-ggplot(tmp_ned2,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned2
 
@@ -52,7 +52,7 @@ tmp_ned3 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$AC
 ned3<-ggplot(tmp_ned3,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned3
 
-tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Nastopi v živo")
+tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Nastopi v zivo")
 ned4<-ggplot(tmp_ned4,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned4
 
@@ -67,10 +67,10 @@ raz1<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 tmp_data2 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Muzeji in galerije")
 raz2<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data3 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Športni dogodki")
+tmp_data3 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Sportni dogodki")
 raz3<-ggplot(tmp_data3,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data4 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Nastopi v živo")
+tmp_data4 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Nastopi v zivo")
 raz4<-ggplot(tmp_data4,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
 
