@@ -75,7 +75,7 @@ svet <- uvozi.zemljevid(
   "ne_50m_admin_0_countries", encoding="UTF-8")
 svet$NAME <- standardize.countrynames(svet$NAME, suggest = "auto", print.changes = TRUE)
 
-Neudelezevanjee_15_0<-filter(Neudelezevanje_Sport,Neudelezevanje_Sport$QUANTILE=="Total")
+Neudelezevanjee_15_0<-filter(Neudelezevanje,Neudelezevanje$QUANTILE=="Total")
 Neudelezevanjee_15_0$Value<-"N/A"
 
 

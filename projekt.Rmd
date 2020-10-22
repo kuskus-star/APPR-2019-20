@@ -82,9 +82,13 @@ Spodnji zemljevid prikazuje povprečno velikost družine za vsako občino.
 
 ```{r vizualizacija, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
 raz1slo
+
 ```
-Opazimo Korelacijo med revscino in neudeleževanju  kulturnih dejavnosti iz finančnih razlogov
-***
+Opazimo predvidljivo korelacijo med revščino in neudeleževanju  kulturnih dejavnosti iz finančnih razlogov
+```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+Graf_romunija
+Graf_spanija
+```
 
 # Napredna analiza podatkov
 

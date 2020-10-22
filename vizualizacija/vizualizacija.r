@@ -79,12 +79,16 @@ raz2
 raz3
 raz4
 #########################################)
-data_spanija <- filter(Slika,Slika$GEO == "Spain",Slika$ACL00 == "Kino")
-Graf_spanija<-ggplot(data_spanija,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+data_spanija <- filter(Slika,Slika$GEO == "Spain",Slika$ACL00 == "Kino",Slika$REASON == "None in the neighbourhood",QUANTILE != "Celotna populacija")
+Graf_spanija<-ggplot(data_spanija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col(show.legend = FALSE)+
+  ggtitle("Španija")+
+  ylab("Neudezevanje")
 Graf_spanija
 
-data_romunija <- filter(Slika,Slika$GEO == "Romania",Slika$ACL00 == "Kino")
-Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+data_romunija <- filter(Slika,Slika$GEO == "Romania",Slika$ACL00 == "Kino",Slika$REASON == "None in the neighbourhood",QUANTILE != "Celotna populacija")
+Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col( show.legend = FALSE)+
+  ggtitle("Romunija")+
+  ylab("Neudezevanje")
 Graf_romunija
 ##########################################################################
 
