@@ -26,7 +26,7 @@ tmp_ned1 <- filter(Neudelezevanje,Neudelezevanje$GEO == "Slovenia",Neudelezevanj
 ned1<-ggplot(tmp_ned1,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned1
 
-tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "sportni dogodki")
+tmp_ned2 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Slovenia",Neudelezevanje$ACL00 == "Športni dogodki")
 ned2<-ggplot(tmp_ned2,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned2
 
@@ -52,7 +52,7 @@ tmp_ned3 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$AC
 ned3<-ggplot(tmp_ned3,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned3
 
-tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Nastopi v �ivo")
+tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Nastopi v živo")
 ned4<-ggplot(tmp_ned4,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned4
 
@@ -67,7 +67,7 @@ raz1<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 tmp_data2 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Muzeji in galerije")
 raz2<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data3 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "sportni dogodki")
+tmp_data3 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Športni dogodki")
 raz3<-ggplot(tmp_data3,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
 tmp_data4 <- filter(Slika,Slika$GEO == "Serbia",Slika$ACL00 == "Nastopi v živo")
