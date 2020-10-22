@@ -22,8 +22,8 @@ km$cluster
 km=kmeans(tmp_data$Value,2)
 km$cluster
 # zemljevid za 3 grupe
-Neudelezevanje_Sport <-filter(Neudelezevanje_15,Neudelezevanje_15$ACL00=="Sports events") 
-tmp_data<-filter(Neudelezevanje_15,Neudelezevanje_15$QUANTILE=="Total",Neudelezevanje_15$ACL00=="Sports events")
+Neudelezevanje_Sport <-filter(Neudelezevanje_15,Neudelezevanje_15$ACL00=="Športni dogodki") 
+tmp_data<-filter(Neudelezevanje_15,Neudelezevanje_15$QUANTILE=="Total",Neudelezevanje_15$ACL00=="Športni dogodki")
 tmp_data$ACL00= NULL
 tmp_data$QUANTILE=NULL
 tmp_data$cluster<- km$cluster
