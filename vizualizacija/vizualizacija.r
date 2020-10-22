@@ -9,7 +9,7 @@ raz1slo<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col(
 tmp_data2 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Muzeji in galerije")
 raz2slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
-tmp_data3 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "�portni dogodki")
+tmp_data3 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Športni dogodki")
 raz3slo<-ggplot(tmp_data3,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
 
 tmp_data4 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Nastopi v živo")
@@ -52,7 +52,7 @@ tmp_ned3 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$AC
 ned3<-ggplot(tmp_ned3,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned3
 
-tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Nastopi v živo")
+tmp_ned4 <- filter(Neudelezevanje,Neudelezevanje$GEO=="Serbia",Neudelezevanje$ACL00 == "Nastopi v �ivo")
 ned4<-ggplot(tmp_ned4,aes(x=QUANTILE,y = Value,fill=TIME)) + geom_col(position="dodge")
 ned4
 
@@ -79,26 +79,12 @@ raz2
 raz3
 raz4
 #########################################)
+data_spanija <- filter(Slika,Slika$GEO == "Spain",Slika$ACL00 == "Kino")
+Graf_spanija<-ggplot(data_spanija,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+Graf_spanija
 
-tmp_data <- filter(Neudelezevanje_15,Neudelezevanje_15$ACL00 == "Muzeji in galerije")
-tmp_data$QUANTILE[tmp_data$QUANTILE == 1] <- 10
-tmp_data$QUANTILE[tmp_data$QUANTILE == 2] <- 30
-tmp_data$QUANTILE[tmp_data$QUANTILE == 3] <- 50
-tmp_data$QUANTILE[tmp_data$QUANTILE == 4] <- 70
-tmp_data$QUANTILE[tmp_data$QUANTILE == 5] <- 90
-tmp_data<-tmp_data[tmp_data$QUANTILE != "Total",]
-jitter_hist<-ggplot(tmp_data,aes(x=QUANTILE,y = Value)) + geom_point()
-jitter 
-
-###############################################################################################################
-tmp_data <- filter(Neudelezevanje_15,Neudelezevanje_15$ACL00 == "Športni dogodki")
-tmp_data$QUANTILE[tmp_data$QUANTILE == 1] <- 10
-tmp_data$QUANTILE[tmp_data$QUANTILE == 2] <- 30
-tmp_data$QUANTILE[tmp_data$QUANTILE == 3] <- 50
-tmp_data$QUANTILE[tmp_data$QUANTILE == 4] <- 70
-tmp_data$QUANTILE[tmp_data$QUANTILE == 5] <- 90
-tmp_data<-tmp_data[tmp_data$QUANTILE != "Total",]
-jitter_sport <-ggplot(tmp_data,aes(x=QUANTILE,y = Value)) + geom_point()
-jitter 
+data_romunija <- filter(Slika,Slika$GEO == "Romania",Slika$ACL00 == "Kino")
+Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()
+Graf_romunija
 ##########################################################################
 
