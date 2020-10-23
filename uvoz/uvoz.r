@@ -2,7 +2,7 @@
 
 
 
-#1. tabela vsebuje procente neudelezevanja v kulturnih prireditvah
+#1. tabela vsebuje procente neudelezevanja v kulturnih prireditvah.
 Neudelezevanje<- read_csv("podatki/ilc_scp04_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
 Neudelezevanje$GEO<-standardize.countrynames(Neudelezevanje$GEO,suggest = "auto", print.changes = TRUE)
 names(Neudelezevanje)[10]<-"FnF"
