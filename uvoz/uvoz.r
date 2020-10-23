@@ -20,12 +20,12 @@ Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Fifth quintile"] <- "5."
 Neudelezevanje$QUANTILE[Neudelezevanje$QUANTILE == "Total"] <- "Celotna populacija"
 Neudelezevanje$TIME[Neudelezevanje$TIME == 2006] <- "2006"
 Neudelezevanje$TIME[Neudelezevanje$TIME == 2015] <- "2015"
-Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v zivo"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
 Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Kulturne Aktivnosti"
 Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Muzeji in galerije"
-Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v zivo"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
 Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Cinema"] <- "Kino"
-Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Sports events"] <- "Sportni dogodki"
+Neudelezevanje$ACL00[Neudelezevanje$ACL00 == "Sports events"] <- "Športni dogodki"
 Neudelezevanje_6 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2006")
 Neudelezevanje_6$TIME <- NULL
 Neudelezevanje_15 <-filter(Neudelezevanje,Neudelezevanje$TIME =="2015")
@@ -36,11 +36,11 @@ Razlogi <- read_csv("podatki/ilc_scp06_1_Data.csv", col_names=TRUE, na=":" ,loca
 Razlogi$GEO <- standardize.countrynames(Razlogi$GEO,suggest = "auto", print.changes = TRUE)
 a
 names(Razlogi)[10]<-"FnF"
-Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v zivo"
+Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
 Razlogi$ACL00[Razlogi$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Kulturne Aktivnosti"
 Razlogi$ACL00[Razlogi$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Muzeji in galerije"
 Razlogi$ACL00[Razlogi$ACL00 == "Cinema"] <- "Kino"
-Razlogi$ACL00[Razlogi$ACL00 == "Sports events"] <- "Sportni dogodki"
+Razlogi$ACL00[Razlogi$ACL00 == "Sports events"] <- "Športni dogodki"
 Razlogi$FnF <- NULL 
 Razlogi$TIME <- NULL
 Razlogi$HHTYP <- NULL

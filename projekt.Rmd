@@ -78,18 +78,24 @@ Tabela 2: Namen uporabe interneta po izobrazbi in spolu - 'izobrazba_in_spol':
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
-Spodnji zemljevid prikazuje povprečno velikost družine za vsako občino.
+
 
 ```{r vizualizacija, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
 raz1slo
-
 ```
-Opazimo predvidljivo korelacijo med revščino in neudeleževanju  kulturnih dejavnosti iz finančnih razlogov
+Zgornji stolpični graf prikazujedelež populacije v sloveniji ki ne hodi v kino po kvintilih(x-os) in navedenih ralogih.Kot po pričakovanjih so finančni razogi razlog ki je najbolj odvisen od finančnega statusa, količina ljudi ki pa jih od kina odvračata ne zanimanje ali prekomerna razdaljapa pa se zdi na prvi pogled konsistenta zato ločimo graf po razlogih
+```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+fin1slo
+non1slo
+```
+Razvidno je torej da Hoja v kino vsaj linearno pada z nižanjem finančne sposognosti, Neobiskovanje zaradi odaljenosti pa izgleda malo bol komplicirano saj na na neki stopnji revščine,najvrjetneje zaradi koncetracije revščine v mestih, z dostop do kina začne povečevati. 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 Graf_romunija
 Graf_spanija
 ```
 
+S tem povodom primerjam Neudeležbo v kinih(kjer je naveden razlog da kina ni v okolici) v dveh državah,
+Španiji in Romunij. V romuniji vidimo da z revšino narašča tudi dobesedni dostop do kin, za španijo se pa ta navidezno linearna rast pri prvem kvintilu nenadoma obrne.
 # Napredna analiza podatkov
 
 ```{r analiza, echo=FALSE, message=FALSE}
