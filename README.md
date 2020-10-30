@@ -13,10 +13,10 @@ Vir podatkov v obliki .cvs in.html
 https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do
 
  Tabela 1.
-  - stolpci:  udeležba, kvantil, vrsta gospodinjstva, stopnja urbanizacije, država
+  - stolpci: leto,država,dejavnost,kvantil,vrednost.
   
  Tabela 2.
- - stolpci: razlog za neudeležbo: kvantil, vrsta gospodinjstva, stopnja urbanizacije, država 
+ - stolpci: razlog za neudeležbo: kvantil, država, odstotek neudeležbe.
 
 ## Program
 
