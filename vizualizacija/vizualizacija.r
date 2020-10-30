@@ -112,4 +112,3 @@ Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + ge
   ylab("Neudezevanje")
 Graf_romunija
 ##########################################################################
-
