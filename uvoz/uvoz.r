@@ -1,7 +1,7 @@
 # 2. faza: Uvoz podatkov.
-
-
-
+GDP<- read_csv("podatki/GDP.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
+GDP$GEO<-standardize.countrynames(GDP$GEO,suggest = "auto", print.changes = TRUE)
+GDP$BDP<-GDP$BDP/1000
 #1. tabela vsebuje procente neudelezevanja v kulturnih prireditvah.
 Neudelezevanje<- read_csv("podatki/ilc_scp04_1_Data.csv", col_names=TRUE, na=":" ,locale = locale(encoding="Windows-1250"))
 Neudelezevanje$GEO<-standardize.countrynames(Neudelezevanje$GEO,suggest = "auto", print.changes = TRUE)
