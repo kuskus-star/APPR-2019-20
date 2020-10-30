@@ -6,7 +6,7 @@ tmp_data1 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Kino")
 raz1slo<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()+ 
   labs(title = "Neobiskovanje Kina", x = "Kvintil", y = "Delez Neudelezenih")
 tmp_data2 <- filter(tmp_data1,REASON == "Financial reasons",QUANTILE != "Celotna populacija")
-fin1slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()+ 
+fin1slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON),legend=FALSE) + geom_col()+ 
   labs(title = "Neobiskovanje Kina", x = "Kvintil", y = "Delez Neudelezenih")
 fin1slo
 
@@ -108,7 +108,6 @@ Graf_spanija
 
 data_romunija <- filter(Slika,Slika$GEO == "Romania",Slika$ACL00 == "Kino",Slika$REASON == "None in the neighbourhood",QUANTILE != "Celotna populacija")
 Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col( show.legend = FALSE)+
-  ggtitle("Romunija")+
-  ylab("Neudezevanje")
+  ggtitle("Romunija")
 Graf_romunija
 ##########################################################################
