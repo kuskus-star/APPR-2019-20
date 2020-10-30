@@ -1,5 +1,5 @@
 ---
-title: "Poročilo pri predmetu Ana Liza podatkov s programom R"
+title: "Poročilo pri predmetu Analiza podatkov s programom R"
 subtitle: "Analiza neudeležbe na kulturnih prireditvah v Sloveniji"
 author: "Filip Škrlj"
 output:
@@ -29,14 +29,13 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 Tema: Analiza neudeležbe na kulturnih prireditvah v Sloveniji
 
-V projektni nalogi bom analiziral neudeleževanje v kulturnih in športnih aktivnostih in razloge za te v letu 2015. Zanima me, kako se spreminja kulturno in športno udeleževanje  pri posameznikih,glede na prihodni kvantil, vrsto gospodinjstva, in stopnjo urbanizacije.
-
+V projektni nalogi bom analiziral neudeleževanje v kulturnih in športnih aktivnostih in razloge za te v letu 2015. Zanima me, kako se spreminja kulturno in športno udeleževanje  pri posameznikih,glede na prihodni kvantil,državo in državni BDP.
 
 ***
 
 # Obdelava, uvoz in čiščenje podatkov
 
-```{r uvoz, echo=FALSE, message=FALSE}
+```{r uvoz, echo=FALSE, message=FALSE,results='hide', warning=FALSE}
 source("uvoz/uvoz.r", encoding="UTF-8")
 ```
 
@@ -44,9 +43,10 @@ Vhodni podatki so v obliki.csv
 
 Vir podatkov:https://appsso.eurostat.ec.europa.eu/nui/submitViewTableAction.do
 
-Podatki so v 2 tabelah:
+Podatki so v 3 tabelah:
 
 Tabela 1:  - 'neudelezevanje':
+
  - 'TIME' - (število)
  - 'GEO' -(neurejen faktor)
  - 'FREQUENC'- (neurejen faktor)
@@ -56,7 +56,7 @@ Tabela 1:  - 'neudelezevanje':
  - 'VALUE' -(število)
  - 'Flags and foot's notes' -(neurejen faktor)
 
-Tabela 2: Namen uporabe interneta po izobrazbi in spolu - 'izobrazba_in_spol':
+Tabela 2:' Razlogi za Neudeleževanje':
  
  - 'ACL00' -(neurejen faktor)
  - 'GEO' -(neurejen faktor)
@@ -64,13 +64,14 @@ Tabela 2: Namen uporabe interneta po izobrazbi in spolu - 'izobrazba_in_spol':
  - 'QUANITLE' -(neurejen faktor)
  - 'DEG_URB' -(neurejen faktor)
  - 'FREQUENC'- (neurejen faktor)
- -'TIME' -(številka) 
  - UNIT' -(neurejen faktor)
  - VALUE' -(število)
  - Flags and foot's notes' -(neurejen faktor)
 
+Tabela 3 :'GDP':
 
-
+  -'GEO'(neurejen faktor)
+  -'BDP'(Število)
 
 # Analiza in vizualizacija podatkov
 
@@ -80,41 +81,38 @@ source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 
 
 
-```{r vizualizacija, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
+```{r lab1, echo=FALSE, fig.align='center', fig.cap='Neobiskovanje Kina'}
 raz1slo
 ```
-Zgornji stolpični graf prikazujedelež populacije v sloveniji ki ne hodi v kino po kvintilih(x-os) in navedenih ralogih.Kot po pričakovanjih so finančni razogi razlog ki je najbolj odvisen od finančnega statusa, količina ljudi ki pa jih od kina odvračata ne zanimanje ali prekomerna razdaljapa pa se zdi na prvi pogled konsistenta zato ločimo graf po razlogih
-```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+Zgornji stolpični graf prikazujedelež populacije v sloveniji ki ne hodi v kino po kvintilih(x-os) in navedenih ralogih.Kot po pričakovanjih so finančni razogi razlog ki je najbolj odvisen od finančnega statusa, količina ljudi ki pa jih od kina odvračata ne zanimanje ali prekomerna razdaljapa pa se zdi na prvi pogled konsistenta zato ločimo graf po razlogih.zdi se, da je najmočnejši vzrok za kulturno neudeležbo preprosto kar nezanimanje, ki izgleda, neodvisno od finančnega statusa.<tr>
+```{r lab2, echo=FALSE, message=FALSE, warning=FALSE,fig.show="hold",fig.align='center', out.width="50%"}
 fin1slo
 non1slo
 ```
-Razvidno je torej da Hoja v kino vsaj linearno pada z nižanjem finančne sposognosti, Neobiskovanje zaradi odaljenosti pa izgleda malo bol komplicirano saj na na neki stopnji revščine,najvrjetneje zaradi koncetracije revščine v mestih, z dostop do kina začne povečevati. 
-```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-Graf_romunija
+<tr>Razvidno je torej da Hoja v kino vsaj linearno pada z nižanjem finančne sposognosti, Neobiskovanje zaradi odaljenosti pa izgleda malo bol komplicirano saj na na neki stopnji revščine,najvrjetneje zaradi koncetracije revščine v mestih, z dostop do kina začne povečevati. 
+```{r lab3, echo=FALSE, message=FALSE, warning=FALSE,results='hide',fig.show="hold", out.width="50%"}
+Graf_romunija 
 Graf_spanija
 ```
 
 S tem povodom primerjam Neudeležbo v kinih(kjer je naveden razlog da kina ni v okolici) v dveh državah,
-Španiji in Romunij. V romuniji vidimo da z revšino narašča tudi dobesedni dostop do kin, za španijo se pa ta navidezno linearna rast pri prvem kvintilu nenadoma obrne.
+Španiji in Romunij. V Romuniji vidimo da z revšino pada tudi dobesedni dostop do kin, za španijo se pa ta navidezno linearna rast pri prvem kvintilu nenadoma obrne. 
 # Napredna analiza podatkov
+Zemljevid Neudelezevanja Športnih dogodkov za celotno populacijo,v treh clusterjih.
 
-```{r analiza, echo=FALSE, message=FALSE}
-source("analiza/analiza.r", encoding="UTF-8")
+```{r analiza, echo=FALSE, message=FALSE,results='hide', warning=FALSE}
+source("analiza/analiza.r",encoding="UTF-8")
+zemljevid_sport
 ```
 
-Spodnji graf prikazuje povezavo med številom naselij in površino občine.
-
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-ggplot(inner_join(obcine, data.frame(obcina=names(skupine),
-                                     skupina=factor(skupine)), by="obcina")
-, aes(x=povrsina, y=naselja, color=skupina, size=prebivalci/1000)) + geom_point() +
-  ggtitle("Število naselij glede na površino občine") +
-  xlab(expression("Površina (km"^2 * ")")) + ylab("Št. naselij") +
-  guides(color=guide_legend(title="Skupina"),
-         size=guide_legend(title="Prebivalci (* 1000)"))
+```{r graf, echo=FALSE, fig.align='center'}
+razmerje_fin
 ```
-
-***
+Graf prikazuje kolikšen delež prebivalstva si ne more privoščiti hoditi v muzeje v odvisnosti od državnega BDP. Zveza je kvadratna.
+```{r graf2, echo=FALSE, fig.align='center'}
+razmerje_ned
+```
+Ogledamo si še kakšn delež populacije muzeji ne zanimajo spet v odvisnosti od BDP, korelacija je tukaj linerna in občutno manjša a še vedno jasno neničelna.
 
 ```{r shiny, echo=FALSE}
 shinyAppDir("shiny", options=list(width="100%", height=600))

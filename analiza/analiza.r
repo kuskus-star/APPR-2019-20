@@ -1,8 +1,4 @@
 # 4. faza: Analiza podatkov
-#Clusters
-#na hitro preverimo optimalno količino skupin 
-#imamo 2-3 grupe
-
 # zemljevid za 3 grupe
 
 tmp_data<-filter(Neudelezevanje_15,Neudelezevanje_15$QUANTILE=="Celotna populacija",Neudelezevanje_15$ACL00=="Športni dogodki")
@@ -27,11 +23,11 @@ zemljevid_sport <- tm_shape(merge(svet, tmp_data, by.x = "NAME", by.y = "GEO"),b
 zemljevid_sport 
 
 Neudelezevanje_Sport <-filter(Neudelezevanje_15,Neudelezevanje_15$ACL00=="Športni dogodki") 
-NMn <-filter(Slika,ACL00=="Muzeji in galerije",QUANTILE =="Celotna populacija",REASON=="No interest") 
+NMn <-filter(Slika,ACL00=="Muzeji in galerije",QUANTILE =="Celotna populacija",REASON=="Ni zanimanja") 
 NMn <-merge.data.frame(NMn,GDP,by="GEO")
 NMn<-NMn[order(NMn$BDP),]
 ###########################
-NMF <-filter(Slika,ACL00=="Muzeji in galerije",QUANTILE =="Celotna populacija",REASON=="Financial reasons") 
+NMF <-filter(Slika,ACL00=="Muzeji in galerije",QUANTILE =="Celotna populacija",REASON=="Finančni razlogi") 
 NMF <-merge.data.frame(NMF,GDP,by="GEO")
 NMF <-NMF[order(NMF$BDP),]
 #poskusil bi razvrstiti u grupe povseh kvintilih

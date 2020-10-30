@@ -36,6 +36,10 @@ Razlogi <- read_csv("podatki/ilc_scp06_1_Data.csv", col_names=TRUE, na=":" ,loca
 Razlogi$GEO <- standardize.countrynames(Razlogi$GEO,suggest = "auto", print.changes = TRUE)
 a
 names(Razlogi)[10]<-"FnF"
+Razlogi$REASON[Razlogi$REASON == "No interest"] <- "Ni zanimanja"
+Razlogi$REASON[Razlogi$REASON == "Nother"] <- "Ostalo"
+Razlogi$REASON[Razlogi$REASON == "Financial reasons"] <- "Finančni razlogi"
+Razlogi$REASON[Razlogi$REASON == "None in the neighbourhood"] <- "Ni v okolici"
 Razlogi$ACL00[Razlogi$ACL00 == "Live performances (theatre, concerts, ballet)"] <- "Nastopi v živo"
 Razlogi$ACL00[Razlogi$ACL00 == "Cultural activities (cinema, live performances or cultural sites)"] <- "Kulturne Aktivnosti"
 Razlogi$ACL00[Razlogi$ACL00 == "Cultural sites (historical monuments, museums, art galleries or archaeological sites)"] <- "Muzeji in galerije"

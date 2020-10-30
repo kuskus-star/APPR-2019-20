@@ -5,17 +5,17 @@ tmap_mode("plot")
 tmp_data1 <- filter(Slika,Slika$GEO == "Slovenia",Slika$ACL00 == "Kino")
 raz1slo<-ggplot(tmp_data1,aes(x=QUANTILE,y = TVALUE,fill = REASON,)) + geom_col()+ 
   labs(title = "Neobiskovanje Kina", x = "Kvintil", y = "Delez Neudelezenih")
-tmp_data2 <- filter(tmp_data1,REASON == "Financial reasons",QUANTILE != "Celotna populacija")
-fin1slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill = REASON),legend=FALSE) + geom_col()+ 
+tmp_data2 <- filter(tmp_data1,REASON == "Finančni razlogi",QUANTILE != "Celotna populacija")
+fin1slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE)) + geom_col(fill="#f8766b")+ 
   labs(title = "Neobiskovanje Kina", x = "Kvintil", y = "Delez Neudelezenih")
 fin1slo
 
-tmp_data2 <- filter(tmp_data1,REASON == "None in the neighbourhood",QUANTILE != "Celotna populacija")
+tmp_data2 <- filter(tmp_data1,REASON == "Ni v okolici",QUANTILE != "Celotna populacija")
 non1slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col(fill = "#00bfc4")+ 
   labs(title = "Neobiskovanje Kina", x = "Kvintil", y = "Delez Neudelezenih")
 non1slo
 
-tmp_data2 <- filter(tmp_data1,REASON == "No interest",QUANTILE != "Celotna populacija")
+tmp_data2 <- filter(tmp_data1,REASON == "Ni zanimanja",QUANTILE != "Celotna populacija")
 not1slo<-ggplot(tmp_data2,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col(fill ="#7cae00")+ 
   labs(title = "Neobiskovanje Kina", x = "Kvintil", y = "Delez Neudelezenih")
 not1slo
@@ -100,14 +100,14 @@ raz2
 raz3
 raz4
 #########################################)
-data_spanija <- filter(Slika,Slika$GEO == "Spain",Slika$ACL00 == "Kino",Slika$REASON == "None in the neighbourhood",QUANTILE != "Celotna populacija")
-Graf_spanija<-ggplot(data_spanija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col(show.legend = FALSE)+
+data_spanija <- filter(Slika,Slika$GEO == "Spain",Slika$ACL00 == "Kino",Slika$REASON == "Ni v okolici",QUANTILE != "Celotna populacija")
+Graf_spanija<-ggplot(data_spanija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col(fill = "#7cae00",show.legend = FALSE)+
   ggtitle("Španija")+
   ylab("Neudezevanje")
 Graf_spanija
 
-data_romunija <- filter(Slika,Slika$GEO == "Romania",Slika$ACL00 == "Kino",Slika$REASON == "None in the neighbourhood",QUANTILE != "Celotna populacija")
-Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col( show.legend = FALSE)+
+data_romunija <- filter(Slika,Slika$GEO == "Romania",Slika$ACL00 == "Kino",Slika$REASON == "Ni v okolici",QUANTILE != "Celotna populacija")
+Graf_romunija<-ggplot(data_romunija,aes(x=QUANTILE,y = TVALUE,fill=REASON)) + geom_col(fill = "#7cae00",show.legend = FALSE)+
   ggtitle("Romunija")
 Graf_romunija
 ##########################################################################

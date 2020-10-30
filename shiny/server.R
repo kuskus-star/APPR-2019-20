@@ -9,7 +9,7 @@ shinyServer(function(input, output) {
   output$razlogi <-  renderPlot({
     main <- "Pogostost števila naselij"
     razlogi_graf<- filter(Slika,Slika$GEO == input$drzava,Slika$ACL00 == input$RACL00,QUANTILE != "Celotna populacija")
-    for (i in c("Financial reasons", "No interest","None in the neighbourhood","Other")){
+    for (i in c("Finančni razlogi", "Ni zanimanja","Ni v okolici","Ostalo")){
       if (!(i %in% input$razlog)) {
         razlogi_graf<-filter(razlogi_graf,razlogi_graf$REASON != i)
         axis(2,at=seq(0,80,10))
@@ -28,9 +28,9 @@ shinyServer(function(input, output) {
                 ))
   
   output$razlog <- renderUI(
-    checkboxGroupInput("razlog", label="Prikaži razloge",selected = c("Financial reasons", "No interest","None in the neighbourhood","Other"),
-                       choiceNames=c("Financial reasons", "No interest","None in the neighbourhood","Other"
-                       ), choiceValues=c("Financial reasons", "No interest","None in the neighbourhood","Other"
+    checkboxGroupInput("razlog", label="Prikaži razloge",selected = c("Finančni razlogi", "Ni zanimanja","Ni v okolici","Ostalo"),
+                       choiceNames=c("Finančni razlogi", "Ni zanimanja","Ni v okolici","Ostalo"
+                       ), choiceValues=c("Finančni razlogi", "Ni zanimanja","Ni v okolici","Ostalo"
                 )))
   
   output$ACL00 <- renderUI(
@@ -39,8 +39,8 @@ shinyServer(function(input, output) {
                 )))
   
   output$RAZZ <- renderUI(
-    selectInput("RAZZ", label="Prikaži razloge",selected = c("Financial reasons", "No interest","None in the neighbourhood","Other"),
-                       choices=c("Financial reasons", "No interest","None in the neighbourhood","Other"
+    selectInput("RAZZ", label="Prikaži razloge",selected = c("Finančni razlogi", "Ni zanimanja","Ni v okolici","Ostalo"),
+                       choices=c("Finančni razlogi", "Ni zanimanja","Ni v okolici","Ostalo"
                        )))
   
   output$dejavnost <- renderUI(
@@ -61,7 +61,7 @@ shinyServer(function(input, output) {
   output$skatle <- renderPlot({
     main <- "Škatlice"
     tmp_data <- filter(Slika,Slika$REASON==input$RAZZ,Slika$ACL00==input$dejavnost,Slika$QUANTILE != "Celotna populacija")
-    zemljevid_brki<-ggplot(tmp_data,aes(x = QUANTILE,y=TVALUE))+
+    zemljevid_brki<-ggplot(tmp_data,aes(x = QUANTILE,y=TVALUE),col="orange")+
     geom_boxplot()
     zemljevid_brki
   })
