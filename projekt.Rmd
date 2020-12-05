@@ -70,8 +70,8 @@ Tabela 2:' Razlogi za Neudeleževanje':
 
 Tabela 3 :'GDP':
 
-  -'GEO'(neurejen faktor)
-  -'BDP'(Število)
+  - 'GEO'(neurejen faktor)
+  - 'BDP'(Število)
 
 # Analiza in vizualizacija podatkov
 
@@ -97,13 +97,15 @@ Graf_spanija
 
 S tem povodom primerjam Neudeležbo v kinih(kjer je naveden razlog da kina ni v okolici) v dveh državah,
 Španiji in Romunij. V Romuniji vidimo da z revšino pada tudi dobesedni dostop do kin, za španijo se pa ta navidezno linearna rast pri prvem kvintilu nenadoma obrne. 
+
 # Napredna analiza podatkov
-Zemljevid Neudelezevanja Športnih dogodkov za celotno populacijo,v treh clusterjih.
+
 
 ```{r analiza, echo=FALSE, message=FALSE,results='hide', warning=FALSE}
 source("analiza/analiza.r",encoding="UTF-8")
 zemljevid_sport
 ```
+Zemljevid Neudelezevanja Športnih dogodkov za celotno populacijo,v treh clusterjih.
 
 ```{r graf, echo=FALSE, fig.align='center'}
 razmerje_fin
